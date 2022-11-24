@@ -1,13 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap'); */
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -15,5 +14,17 @@ body {
   box-sizing: border-box;
 }
 
+.kaybol{
+  @apply hidden
+}
 
+.flex-center{
+  @apply flex justify-center items-center 
+}
+.flex-bw{
+  @apply flex justify-between items-center 
+}
 
+.btn-primary{
+  @apply text-white py-2 px-[1.875rem] bg-primary rounded-3xl cursor-pointer transition-opacity delay-200 hover:opacity-70
+}
