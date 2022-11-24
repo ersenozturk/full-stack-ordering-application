@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Logo from "../ui/Logo";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
-import OutsideClickHandler from "react-outside-click-handler";
-import Title from "../ui/Title";
+
+import Search from "../ui/Search";
 
 const Header = () => {
-  const [isSearchModal, setSetIsSearchModal] = useState(false);
+  const [isSearchModal, setIsSearchModal] = useState(false);
   const handleSearch = () => {
-    setSetIsSearchModal(true);
+    setIsSearchModal(true);
   };
   return (
     <header className="h-[5.5rem] bg-secondary ">
@@ -55,17 +55,7 @@ const Header = () => {
           </a>
         </div>
       </div>
-      {isSearchModal && (
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setSetIsSearchModal(false);
-          }}
-        >
-          <div className="">
-          <Title titleClass='font-dancing text-center text-primary' >Search</Title>
-          </div>
-        </OutsideClickHandler>
-      )}
+      {isSearchModal && <Search setIsSearchModal={setIsSearchModal}/>}
     </header>
   );
 };

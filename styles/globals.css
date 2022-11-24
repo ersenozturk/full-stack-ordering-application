@@ -6,25 +6,28 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
-.kaybol{
-  @apply hidden
+.kaybol {
+  @apply hidden;
 }
 
-.flex-center{
-  @apply flex justify-center items-center 
+.flex-center {
+  @apply flex justify-center items-center;
 }
-.flex-bw{
-  @apply flex justify-between items-center 
+.flex-bw {
+  @apply flex justify-between items-center;
 }
 
-.btn-primary{
-  @apply text-white py-2 px-[1.875rem] bg-primary rounded-3xl cursor-pointer transition-opacity delay-200 hover:opacity-70
+.btn-primary {
+  @apply text-white py-2 px-[1.875rem] bg-primary rounded-3xl cursor-pointer transition-opacity delay-200 hover:opacity-70;
+}
+
+.modalShow {
+  @apply w-screen h-screen grid place-content-center fixed z-40 top-0 left-0 after:content-[''] after:w-screen after:h-screen after:bg-gray-600 after:absolute after:top-0 after:left-0 after:opacity-50;
 }
