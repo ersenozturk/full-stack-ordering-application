@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Logo from "../ui/Logo";
 import {
@@ -21,9 +22,8 @@ const Header = () => {
         <div>
           <Logo />
         </div>
-        {/* <nav className="sm:static absolute bottom-0"> */}
-        <nav className="sm:inline-flex">
-          <ul className="flex gap-x-3">
+        <nav className="absolute top-0 left-0 grid place-content-center h-screen w-full text-black sm:static sm:text-white sm:w-auto">
+          <ul className="flex flex-col sm:flex-row gap-x-3">
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary ">
               <a href="#"> Home </a>
             </li>
