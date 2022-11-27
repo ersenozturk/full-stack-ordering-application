@@ -1,8 +1,14 @@
 import { useState } from "react";
 import Logo from "../ui/Logo";
-import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
+import {
+  FaUserAlt,
+  FaShoppingCart,
+  FaSearch,
+  FaHamburger,
+} from "react-icons/fa";
 
 import Search from "../ui/Search";
+import PrimayBtn from "../ui/PrimayBtn";
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
@@ -15,7 +21,8 @@ const Header = () => {
         <div>
           <Logo />
         </div>
-        <nav>
+        {/* <nav className="sm:static absolute bottom-0"> */}
+        <nav className="sm:inline-flex">
           <ul className="flex gap-x-3">
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary ">
               <a href="#"> Home </a>
@@ -31,15 +38,16 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
         <div className="flex-center  gap-x-4">
           <a
-            className="transition ease-in-out delay-200 hover:text-primary"
+            className="transition ease-in-out delay-100 hover:text-primary"
             href="#"
           >
             <FaUserAlt />
           </a>
           <a
-            className="transition ease-in-out delay-200 hover:text-primary"
+            className="transition ease-in-out delay-100 hover:text-primary"
             href="#"
           >
             <FaShoppingCart />
@@ -50,12 +58,13 @@ const Header = () => {
           >
             <FaSearch />
           </button>
-          <a className="btn-primary" href="#">
-            Order Online
-          </a>
+          <PrimayBtn addClass="hidden md:inline-flex">Order Online</PrimayBtn>
+          <button className="md:hidden transition ease-in-out delay-100 hover:text-primary">
+            <FaHamburger />
+          </button>
         </div>
       </div>
-      {isSearchModal && <Search setIsSearchModal={setIsSearchModal}/>}
+      {isSearchModal && <Search setIsSearchModal={setIsSearchModal} />}
     </header>
   );
 };
