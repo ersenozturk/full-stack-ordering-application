@@ -1,6 +1,9 @@
 
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Logo from "../ui/Logo";
+import Search from "../ui/Search";
+import PrimayBtn from "../ui/PrimayBtn";
 import {
   FaUserAlt,
   FaShoppingCart,
@@ -8,18 +11,18 @@ import {
   FaHamburger,
 } from "react-icons/fa";
 
-import Search from "../ui/Search";
-import PrimayBtn from "../ui/PrimayBtn";
-
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const handleSearch = () => {
     setIsSearchModal(true);
   };
+  const router = useRouter();
   return (
-    <header className="h-[5.5rem] bg-secondary ">
+    <header  className={`h-[5.5rem] z-50 relative ${
+      router.asPath === "/" ? "bg-transparent" : "bg-secondary"
+    }`}>
       <div className="container flex-bw h-full mx-auto text-white">
-        <div>
+        <div className="transition delay-300 cursor-pointer hover:text-primary" onClick={()=>router.route ='/'}>
           <Logo />
         </div>
         <nav className="absolute top-0 left-0 grid place-content-center h-screen w-full text-black sm:static sm:text-white sm:w-auto">
