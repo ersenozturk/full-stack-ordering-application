@@ -49,7 +49,7 @@ const Customers = () => {
     ],
   };
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto mb-20">
       <Title titleClass="text-[2.5rem] mb-10">What Says Our Customers</Title>
       <Slider {...settings}>
         <CustomerItem imgSrc="/images/customer1.jpg" h3="Ersen OZTURK" />

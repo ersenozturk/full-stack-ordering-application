@@ -18,12 +18,9 @@ export default function Index() {
           crossOrigin="true"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-
       </Head>
 
-      <Header />
       <Home />
-      <Footer/>
     </div>
   );
 }
