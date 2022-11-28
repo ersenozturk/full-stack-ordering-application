@@ -8,7 +8,7 @@ const Customers = () => {
     return (
       <button
         className="w-12 h-12 border bg-primary rounded-full flex items-center justify-center absolute -bottom-12 left-1/2 mx-1"
-        onClick={onclick}
+        // onClick={onclick}
       >
         <GrNext />
       </button>
@@ -19,7 +19,7 @@ const Customers = () => {
     return (
       <button
         className="w-12 h-12 border bg-primary rounded-full flex items-center justify-center absolute -bottom-12 right-1/2 mx-1"
-        onClick={onclick}
+        // onClick={onclick}
       >
         <GrPrevious />
       </button>
