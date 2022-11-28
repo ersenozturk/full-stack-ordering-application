@@ -10,6 +10,7 @@ import {
   FaSearch,
   FaHamburger,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
@@ -28,16 +29,16 @@ const Header = () => {
         <nav className="absolute top-0 left-0 grid place-content-center h-screen w-full text-black sm:static sm:text-white sm:w-auto">
           <ul className="flex flex-col sm:flex-row gap-x-3">
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary ">
-              <a href="#"> Home </a>
+              <Link href='/'> Home </Link>
             </li>
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary">
-              <a href="#"> Menu</a>
+              <Link href='/menu'> Menu</Link>
             </li>
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary">
-              <a href="#"> About</a>
+              <Link href='/about'> About</Link>
             </li>
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary">
-              <a href="#"> Book Table</a>
+              <Link href='/reservation'> Book Table</Link>
             </li>
           </ul>
         </nav>
