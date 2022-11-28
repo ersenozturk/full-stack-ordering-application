@@ -1,22 +1,87 @@
 import Input from "../form/Input";
 import Title from "./Title";
 import PrimayBtn from "./PrimayBtn";
+import { useFormik } from "formik";
 
 const Book = () => {
+  const onSubmit = async (values, actions) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    actions.resetForm();
+    console.log(values);
+    console.log(actions);
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      fullName: "",
+      phone: "",
+      email: "",
+      manyPerson: "",
+      date: "",
+    },
+    onSubmit,
+  });
+
+  const inputs = [
+    {
+      id: 1,
+      name: "fullName",
+      type: "text",
+      span: "Your Full Name",
+      value: formik.values.fullName,
+    },
+    {
+      id: 2,
+      name: "phone",
+      type: "tel",
+      span: "Your Phone Number",
+      value: formik.values.phone,
+    },
+    {
+      id: 3,
+      name: "email",
+      type: "email",
+      span: "Your Email",
+      value: formik.values.email,
+    },
+    {
+      id: 4,
+      name: "manyPerson",
+      type: "number",
+      span: "How Many Person?",
+      value: formik.values.manyPerson,
+    },
+    {
+      id: 5,
+      name: "date",
+      type: "datetime-local",
+      span: "mm/dd/yyyy",
+      value: formik.values.date,
+    },
+  ];
+
   return (
     <div className="container mx-auto sm:p-4 md:p-20">
       <div className="flex items-start">
         <Title titleClass="text-[2.5rem] mb-4 ">Book a Reservation</Title>
       </div>
       <div className="flex flex-wrap-reverse gap-4">
-        <form action="#" className="flex flex-1 flex-col justify-between gap-4">
-          <Input type="text" span="Your Full Name" />
-          <Input type="num" span="Your Phone Number" />
-          <Input type="email" span="Your Email" />
-          <Input type="num" span="How Many Person?" />
-          <Input type="date" span="mm/dd/yyyy" />
+        <form
+          action="#"
+          className="flex flex-1 flex-col justify-between gap-4"
+          onSubmit={formik.handleSubmit}
+        >
+          {inputs.map((eachInput) => {
+            return (
+              <Input
+                key={eachInput.id}
+                {...eachInput}
+                onChange={formik.handleChange}
+              />
+            );
+          })}
           <div className="flex items-start">
-            <PrimayBtn>BOOK NOW</PrimayBtn>
+            <PrimayBtn type="submit">BOOK NOW</PrimayBtn>
           </div>
         </form>
         <div className="flex-1">

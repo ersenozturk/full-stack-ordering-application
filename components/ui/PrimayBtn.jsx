@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PrimayBtn = ({children,addClass}) => {
+const PrimayBtn = ({children,addClass,type}) => {
   return (
-    <div className={`btn-primary ${addClass}`}>{children}</div>
+    <button type={type ? type : 'button'} className={`btn-primary ${addClass}`}>{children}</button>
   )
 }
 
