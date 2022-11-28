@@ -48,12 +48,12 @@ const Header = () => {
         </nav>
 
         <div className="flex-center  gap-x-4">
-          <a
+          <Link
             className="transition ease-in-out delay-100 hover:text-primary"
-            href="#"
+            href="/login"
           >
             <FaUserAlt />
-          </a>
+          </Link>
           <a
             className="transition ease-in-out delay-100 hover:text-primary"
             href="#"

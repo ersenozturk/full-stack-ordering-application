@@ -8,8 +8,6 @@ const Book = () => {
   const onSubmit = async (values, actions) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     actions.resetForm();
-    console.log(values);
-    console.log(actions);
   };
 
   const formik = useFormik({
