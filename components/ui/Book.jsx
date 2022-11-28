@@ -2,6 +2,7 @@ import Input from "../form/Input";
 import Title from "./Title";
 import PrimayBtn from "./PrimayBtn";
 import { useFormik } from "formik";
+import { bookSchema } from "../../schema/bookSchema";
 
 const Book = () => {
   const onSubmit = async (values, actions) => {
@@ -20,6 +21,7 @@ const Book = () => {
       date: "",
     },
     onSubmit,
+    validationSchema: bookSchema,
   });
 
   const inputs = [
@@ -29,6 +31,8 @@ const Book = () => {
       type: "text",
       span: "Your Full Name",
       value: formik.values.fullName,
+      errorMessage: formik.errors.fullName,
+      touched:formik.touched.fullName
     },
     {
       id: 2,
@@ -36,6 +40,9 @@ const Book = () => {
       type: "tel",
       span: "Your Phone Number",
       value: formik.values.phone,
+      errorMessage: formik.errors.phone,
+      touched:formik.touched.phone
+
     },
     {
       id: 3,
@@ -43,6 +50,9 @@ const Book = () => {
       type: "email",
       span: "Your Email",
       value: formik.values.email,
+      errorMessage: formik.errors.email,
+      touched:formik.touched.email
+
     },
     {
       id: 4,
@@ -50,6 +60,9 @@ const Book = () => {
       type: "number",
       span: "How Many Person?",
       value: formik.values.manyPerson,
+      errorMessage: formik.errors.manyPerson,
+      touched:formik.touched.manyPerson
+
     },
     {
       id: 5,
@@ -57,6 +70,9 @@ const Book = () => {
       type: "datetime-local",
       span: "mm/dd/yyyy",
       value: formik.values.date,
+      errorMessage: formik.errors.date,
+      touched:formik.touched.date
+
     },
   ];
 
@@ -77,6 +93,7 @@ const Book = () => {
                 key={eachInput.id}
                 {...eachInput}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             );
           })}

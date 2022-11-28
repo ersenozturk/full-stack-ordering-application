@@ -1,12 +1,14 @@
 import React from "react";
 
-const Input = ({type, span,...eachInput }) => {
+const Input = ({ type, span, errorMessage, touched, ...eachInput }) => {
   return (
     <div className="w-full">
-      <label htmlFor='' className="relative block cursor-text">
+      <label htmlFor="" className="relative block cursor-text">
         <input
           type={type}
-          className="w-full h-14 border border-primary outline-none px-4 peer"
+          className={`w-full h-14 border outline-none px-4 peer ${
+            touched && errorMessage ? "border-red-800" : "border-primary"
+          }`}
           required
           {...eachInput}
         />
@@ -18,6 +20,7 @@ const Input = ({type, span,...eachInput }) => {
           ""
         )}
       </label>
+      {touched && <span className="text-xs text-red-800">{errorMessage}</span>}
     </div>
   );
 };
