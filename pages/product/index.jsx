@@ -2,7 +2,7 @@ import Image from "next/image";
 import PrimayBtn from "../../components/ui/PrimayBtn";
 import Title from "../../components/ui/Title";
 
-//1 Product page
+//! Product page
 const Index = () => {
   return (
     <div className="flex h-screen items-center gap-20 p-20">
