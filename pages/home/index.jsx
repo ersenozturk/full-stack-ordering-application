@@ -15,7 +15,6 @@ const Index = () => {
       <About/>
       <Book/>
       <Customers/>
-
     </div>
   );
 };
