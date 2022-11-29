@@ -9,15 +9,15 @@ const Footer = () => {
             <Title titleClass="text-[30px]">Contact Us</Title>
             <div className="flex flex-col gap-y-2 mt-3">
               <div>
-                <i className="fab fa-map-marker"></i>
+                <i className="fa fa-map-marker"></i>
                 <span className="inline-block ml-2">Location</span>
               </div>
               <div>
-                <i className="fab fa-phone"></i>
+                <i className="fa fa-phone"></i>
                 <span className="inline-block ml-2">Call +01 1234567890</span>
               </div>
               <div>
-                <i className="fab fa-envelope"></i>
+                <i className="fa fa-envelope"></i>
                 <span className="inline-block ml-2">demo@gmail.com</span>
               </div>
             </div>
