@@ -17,7 +17,6 @@ const Header = () => {
     setIsSearchModal(true);
   };
   const router = useRouter();
-  console.log(router.route);
   return (
     <header
       className={`h-[5.5rem] z-50 relative ${
@@ -54,12 +53,12 @@ const Header = () => {
           >
             <FaUserAlt />
           </Link>
-          <a
+          <Link
             className="transition ease-in-out delay-100 hover:text-primary"
-            href="#"
+            href="/cart"
           >
             <FaShoppingCart />
-          </a>
+          </Link>
           <button
             onClick={handleSearch}
             className="transition ease-in-out delay-200 hover:text-primary"
