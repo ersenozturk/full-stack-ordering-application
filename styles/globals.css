@@ -45,3 +45,6 @@ body {
 .menu-category-li {
   @apply px-6 py-2 rounded-3xl;
 }
+.shadow-strong {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}

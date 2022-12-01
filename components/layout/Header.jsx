@@ -29,7 +29,8 @@ const Header = () => {
             <Logo />
           </Link>
         </div>
-        <nav className="absolute top-0 left-0 grid place-content-center h-screen w-full text-black sm:static sm:text-white sm:w-auto">
+        {/* h-screen */}
+        <nav className="absolute top-0 left-0 grid place-content-center  w-full text-black sm:static sm:text-white sm:w-auto">
           <ul className="flex flex-col sm:flex-row gap-x-3">
             <li className="uppercase px-[.31rem] py-[1.25rem] text-base cursor-pointer transition ease-in-out delay-200 hover:text-primary ">
               <Link href="/"> Home </Link>

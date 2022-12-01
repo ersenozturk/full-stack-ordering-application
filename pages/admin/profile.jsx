@@ -7,14 +7,22 @@ import Input from "../../components/form/Input";
 import PrimayBtn from "../../components/ui/PrimayBtn";
 import { useState } from "react";
 import { useFormik } from "formik";
-import { footerSchema } from "../../schema/profileSchema";
+import { footerSchema } from "../../schema/footerSchema";
 
 const AdminProfile = () => {
   const [tabs, setTabs] = useState(0);
   const [inputText, seInputText] = useState("");
   const [categories, setCategories] = useState(["pizza", "hamburger"]);
+  const [linkAddress, setLinkAddress] = useState("");
+  const [icon, setIcon] = useState("");
+  const [allIcons, setAllIcons] = useState([
+    "facebook",
+    "instagram",
+    "twitter",
+  ]);
 
-  const handleAddClick = () => {
+
+  const handleAddCategoryClick = () => {
     setCategories([...categories, inputText]);
     seInputText("");
   };
@@ -290,7 +298,7 @@ const AdminProfile = () => {
                 value={inputText}
               />
               {/* <PrimayBtn type='click' onClick={()=>setCategories([...categories,inputText])}>Add</PrimayBtn> */}
-              <button className="btn-primary" onClick={handleAddClick}>
+              <button className="btn-primary" onClick={handleAddCategoryClick}>
                 Add2
               </button>
             </div>
@@ -338,6 +346,54 @@ const AdminProfile = () => {
                     />
                   );
                 })}
+              </div>
+
+              <div className="flex flex-col md:items-center justify-between my-4 md:flex-row gap-4 shadow-strong">
+                <div className="flex gap-4 items-center">
+                  <Input
+                    span="Link Address"
+                    value="https://"
+                    onChange={(e) => setLinkAddress(e.target.value)}
+                  />
+
+                  <Input
+                    span="Icon name"
+                    value={icon}
+                    onChange={(e) => setIcon(e.target.value)}
+                  />
+
+                  <button
+                    className="btn-primary cursor-pointer"
+                    type="button"
+                    onClick={() => {
+                      allIcons.indexOf(icon) === -1
+                        ? setAllIcons([...allIcons, icon])
+                        : setAllIcons(allIcons) & alert("already exist icon");
+                      setIcon("");
+                    }}
+                  >
+                    Add
+                  </button>
+                </div>
+                <ul className="flex items-center gap-4">
+                  {allIcons.map((each, i) => {
+                    return (
+                      <li key={i}>
+                        <i className={`fa-brands fa-${each} text-2xl`}></i>
+                        <button
+                          className="text-red-900 ml-2"
+                          onClick={() =>
+                            setAllIcons(
+                              allIcons.filter((clicked) => clicked !== each)
+                            )
+                          }
+                        >
+                          <i className="fa-solid fa-trash text-2xl"></i>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
 
               <PrimayBtn type="submit">UPDATE</PrimayBtn>
